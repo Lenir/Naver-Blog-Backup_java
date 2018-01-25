@@ -104,4 +104,23 @@ public class NaverBlogCrawler {
 	}
 	
 }
+class NaverBlogCrawlThread extends Thread{
+	private String naverId;
+	private ArrayList<String> postList;
+	private boolean isDevMode;
+	
+	NaverBlogCrawlThread(String naverId, ArrayList<String> postList, boolean isDevMode){
+		this.naverId = naverId;
+		this.postList = postList;
+		this.isDevMode = isDevMode;
+	}
+	
+	@Override
+	public void run() {
+		for(String postId : this.postList) {
+			String urlPrefix = "https://blog.naver.com/" + this.naverId + "/" + postId;
+			//TODO - implement post crawler and run
+		}
+	}
+}
 
